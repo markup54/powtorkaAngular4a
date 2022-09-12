@@ -1,4 +1,7 @@
 import { Component, OnInit , Input} from '@angular/core';
+import { Osoba } from '../osoba';
+import { Szkolenia } from '../szkolenia';
+import { Szkolenie } from '../szkolenie';
 
 @Component({
   selector: 'app-kurs',
@@ -6,7 +9,8 @@ import { Component, OnInit , Input} from '@angular/core';
   styleUrls: ['./kurs.component.css']
 })
 export class KursComponent implements OnInit {
-
+  @Input() aktualny! :number;
+  kursy:Szkolenie[] =Szkolenia.kursy;
   @Input() zmiennaImport!:string;
   constructor() { }
 

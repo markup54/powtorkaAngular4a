@@ -24,7 +24,11 @@
 <p class="a b">Jakiś tekst bez ngClass</p>
 <p>Wybierz kurs którego szczegóły chcesz wyświetlić
   <select [(ngModel)]=wybranyKurs>
-    <option *ngFor="let kurs of kursyProgramowania">{{kurs}}</option>
+    <option *ngFor="let kurs of kursy, 
+      let wybranyKurs = index" value="{{wybranyKurs}}">
+      {{wybranyKurs}} 
+      {{kurs.getTytul()}}</option>
   </select>
 </p>
-<app-kurs></app-kurs>
+<p>{{wybranyKurs}}</p>
+<app-kurs [aktualny]="wybranyKurs"></app-kurs>

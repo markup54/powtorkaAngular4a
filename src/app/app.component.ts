@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Szkolenia } from './szkolenia';
+import { Szkolenie } from './szkolenie';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'powtorzenie';
   kursyProgramowania = ['JS', "Python", "PHP", "node.js"];
+  kursy:Szkolenie[] =Szkolenia.kursy;
   urlZdj1: string = "assets/images/zdj1.jpg";
   urlZdj2: string = "assets/images/zdj2.jpg";
   brak: string = "assets/images/brak.jpg";
@@ -33,5 +36,6 @@ export class AppComponent {
 
     }
   }
-  wybranyKurs:number=0;
+  wybranyKurs!:number;
+  
 }
